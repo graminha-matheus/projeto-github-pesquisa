@@ -1,0 +1,15 @@
+/* Arquivo CSS com alguns parâmetros extras */
+
+.size-adjust {
+	width: 3%
+	height: 3%;
+	}
+
+.user-img-size {
+	width: 10px
+	height: 100px;
+}
+
+.dark-theme{
+	background-color:#121211
+	}
