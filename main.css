@@ -5,11 +5,17 @@
 	height: 3%;
 	}
 
-.user-img-size {
-	width: 10px
-	height: 100px;
+.dark-theme{
+	background-color:#121211;
+	}
+
+.image-portrait{
+	border-radius: 50%;
+	width: 155px;
+	height: auto;
 }
 
-.dark-theme{
-	background-color:#121211
-	}
+.search-bar-format{
+	padding-right: 1px;
+}
+

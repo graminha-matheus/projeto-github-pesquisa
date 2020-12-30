@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
 	var userimg = ''
-	var usertag
 
 	// formulário
 	$("#form").submit(function (event){
@@ -30,22 +29,56 @@ $(document).ready(function(){
 
 		//apaga as imagens da pesquisa anterior
 		$("#result").empty()
+		$("#result_repo_info").empty()
+		$("#h_dev").empty()
 
-		$.get("https://api.github.com/search/users?q=" + username + "+in:user&per_page=100",
+		$.get("https://api.github.com/search/users?q=" + username + "+in:user",
 		 function(data){
 				
 				//mostra dados resultantes no console
 				console.log(data)	
 
-				//mostra o avatar de cada usuário que se encaixa nos parâmetros da busca
-				data.items.forEach(item => {
-					
-					userimg = `<a href="user_page.html"><img class="border ml-4 mt-4" width="100" height="100" src="${item.avatar_url}"/></a>`
-					usertag = $(item.login)
+				//mostra a imagem de perfil do usuário correspondente
+				var profile_picture = 
+				`<img id="imguser" 
+				class="ml-4 mt-4 image-portrait center" 
+				src="${data.items[0].avatar_url}"/>`
 
-					$("#result").append(userimg)
-					$("#loginuser").append(usertag)
-				});
+				$("#result").append(profile_picture)
+
+				//mostra o nome de perfil do usuário correspondente
+				var profile_login = 
+				`<h1 class="text-center text-light">${data.items[0].login}</h1>
+				<h3>-----------------</h3>
+				<h4 class="text-center text-light">${data.items[0].login}'s repositories:</h2>
+				<br>`
+				
+				$("#result").append(profile_login)
+
+		})
+
+		$.get("https://api.github.com/search/repositories?q=user:" + username +"&sort=stars&order=desc",
+		 function(data){
+				
+				//mostra dados resultantes no console
+				console.log(data)	
+
+				data.items.forEach(item => {
+
+					profile_repo_info = 
+					//Nome do repositório, descrição e linguagem.
+					 `<a href="${item.html_url}">
+					 <p class="text-center text-light font-weight-bold">${item.full_name}</p></a>
+
+					 <p class="text-center text-light font-italic">"${item.description}"</p> 
+
+					 <p class="text-center text-light font-weight-light">Mostly developed in ${item.language}</p>
+					 <h3 class="text-center">-----------</h3>`
+
+					$("#result_repo_info").append(profile_repo_info)
+
+				})
 		})
 	}
+
 });

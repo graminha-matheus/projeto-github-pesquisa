@@ -7,56 +7,59 @@
 	<title> GitHub </title>
 </head>
 
-<!------------------------------------------------------------->
-
-<body class="dark-theme">
-
-	<!--------------------------------------------------------->
+<body  class="dark-theme">
 	
 	<br>
 	
-	<div class="mx-auto" style="width: 200px;">
-		<img src="github-11-32.png">
-		</img>
-	</div>	
-
 	<br>
 	
 	<!---------------- Caixa de Pesquisa + Botão -------------->
 
 	<div class="container">
-	<!--------------------------------------------------------->	
 
 		<form id="form" autocomplete="off">
-			<div style="text-align:left" class="input-group">
+			<div style="text-align:center;" class="input-group">
 
   				<div style="padding-left: 240px;" 
   				class="input-group-prepend">
 
-					<span style="background-color:#121211; font" class="input-group-text  outline-dark text-white" id="ghlink">github.com/</span>
+					<span style="background-color:#121211; font" class="input-group-text outline-dark text-white" id="ghlink">github.com/</span>
 			
 				</div>	
 
-				<input style="padding-right: 20px" type="text" class="size-adjust" id="username" placeholder="username"></input>
+				<input style="padding-right: 190px" type="text" class="size-adjust" id="username" placeholder="username"></input>
 
 				<button class="btn btn-outline-light size-adjust ml-2"> Search in GitHub </button>
 
 			</div>
 		</form>
-		
-		<div id = "result">	
+
+    <!---------------- Alguns detalhes pra deixar o site com frufru -------------->
+
+		<div class="mx-auto d-block" style="width: 200px;" id = "result">
+			<br>
+			<h1 class="text-center text-light text-weight-bold">Welcome!</h1>
 		</div>
 
-		<div id = "loginuser">
-		</div>
-	<!----------------------------------------------------------->
-	</div>	
+		<div id="h_dev">
+			<p class="text-center text-light text-weight-light">'GitHub User and Repo Search' Project - Developed for BCR CX dev recruitment </p>
 
-	<!----------------------------------------------------------->
+			<a href="https://github.com/graminha-matheus"><h4 class="text-center text-light text-weight-bold"> Developed by Matheus Graminha </h4> </a>
+		</div>
+
+	<!---------------------------------- Resultados ------------------------------->
+
+		<div id="result_login">
+		</div>
+
+		<div id="result_repo_info">
+		</div>
+      
+	</div>
 
 	<br>
 
-	<!--------- footer para declaração de scripts e links ------->
+	<!--------- V footer para declaração de scripts e links V ------->
 		<footer>
 
 			<link href="public/css/bootstrap.min.css" rel="stylesheet">
@@ -67,7 +70,7 @@
 			<script src="main.js"></script>
 
 		</footer>
-	<!--------- footer para declaração de scripts e links -------->
+	<!--------- ^ footer para declaração de scripts e links ^ -------->
 
 
 </body>
